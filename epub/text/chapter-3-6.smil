@@ -1,0 +1,7 @@
+<smil xmlns="http://www.w3.org/ns/SMIL" xmlns:epub="http://www.idpf.org/2007/ops" version="3.0">
+ <body>
+  <seq id="seq8" epub:textref="chapter-3-6.xhtml" epub:type="bodymatter chapter">
+    <par id="p001"><text src="chapter-3-6.xhtml#p001"/><audio clipBegin="182s" clipEnd="201s" src="../audio/The_Three_Little_Pigs.mp3" /></par>
+  </seq>
+ </body>
+</smil>

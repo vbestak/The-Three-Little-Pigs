@@ -1,0 +1,110 @@
+@charset "utf-8";
+@namespace epub "http://www.idpf.org/2007/ops";
+
+@font-face{
+  font-family: 'Baskerville';
+  font-weight: normal;
+  font-style: normal;
+  src: url('baskerville.ttf');
+}
+
+body {
+  line-height: 1.5;
+  font-kerning: normal;
+  font-variant: common-ligatures oldstyle-nums proportional-nums;
+  font-feature-settings: "kern", "liga", "clig", "onum", "pnum";
+  text-align: left;
+  font-family: "Baskerville";
+}
+
+body * {
+  line-height: inherit;
+}
+
+
+p, span {
+  display: contents;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 2;
+  -ms-hyphenate-limit-chars: 6 3 2;
+  -hyphenate-limit-chars: 6 3 2;
+  -webkit-hyphenate-limit-lines: 2;
+  -hyphenate-limit-lines: 2;
+  font-size: 1.2em;
+}
+.normal{
+  font-size: 1.2rem;
+}
+
+h2 {
+  -adobe-hyphenate: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -epub-hyphens: none;
+  hyphens: none;
+  font-size: 2em;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-variant: common-ligatures lining-nums proportional-nums;
+  font-feature-settings: "kern", "liga", "clig", "lnum", "pnum";
+}
+
+
+.firstChapter > p::first-letter {
+	font-size: 2em; 
+	margin: 0em 0.2em 0em 0em; 
+	float: left;
+}
+
+
+.firstChapter > p > span {
+	font-variant: small-caps;
+}
+
+.imgContainer{
+  page-break-after: always;
+  width:99%;
+  height:98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgContainer > div {
+  width: 100%;
+  height: 100%;
+}
+
+.imgContainer > div > img{
+	width: 100%;
+	height:100%;
+}
+
+.video-caption{
+  display: block;
+  text-align: center;
+}
+
+.change-ending{
+  display: block;
+  color: rgb(154, 199, 212);
+  font-size: 1.5em;
+}
+
+@supports not (font-variant-caps: small-caps) {
+  .firstChapter > p > span {
+    font-variant: normal;
+    font-feature-settings: "smcp", "onum", "pnum";
+  }
+}
+
+@supports (font-variant-caps: small-caps) {
+  .firstChapter > p > span {
+    font-variant: normal;
+    font-variant-caps: small-caps;
+  }
+}
+

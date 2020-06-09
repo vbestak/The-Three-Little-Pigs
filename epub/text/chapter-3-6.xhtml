@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" epub:prefix="z3998: http://www.daisy.org/z3998/2012/vocab/structure/, se: https://standardebooks.org/vocab/1.0" xml:lang="en-GB">
+	<head>
+		<title>THE STORY OF THE THREE LITTLE PIGS.</title>
+		<link rel="stylesheet" href="../css/core.css"/>
+	</head>
+	<body epub:type="bodymatter">
+		<section id="chapter-3-6" epub:type="division">
+			<div class="imgContainer"><div style="max-width: 390px; max-height:500px;"><img src="../images/img21.jpg" /></div></div>
+			<div class="change-ending" onclick="changeEnding();">Click to change ending</div>
+			<p id="p001">When the little Pig saw what he was about, he hung on the pot full of water, and made up a blazing fire, and, just as the Wolf was coming down,
+				<span class="normal" id="ending1"> took off the cover of the pot, and in fell the Wolf. And the little Pig put on the cover again in an instant, boiled him up, and ate him for supper, and lived happy ever after.</span>
+				<span class="normal" id="ending2"> made a nice mushroom stew and offered it to the Wolf. “Why can’t we be friends instead?” asked the Pig. “I don’t know. Can we?!” said the Wolf. They ate the stew,  talked about their silliness and lived happily ever after.</span>
+			</p>
+			<div style="page-break-inside: avoid;width: 100%;max-width:346px;margin: 0 auto;"><img src="../images/img22.jpg"/></div>
+			<div style="page-break-inside: avoid;width: 100%;max-width:394px;margin: 0 auto;"><img src="../images/img23.jpg"/></div>
+		</section>
+		
+		<script type="text/javascript">
+		<![CDATA[
+			let currentEnding = 1;
+			let numberOfEndings;
+			let ending1 = document.querySelector("#ending1");
+			let ending2 = document.querySelector("#ending2");
+			let endings = [];
+			
+			endings.push(ending1);
+			endings.push(ending2);
+			numberOfEndings = endings.length - 1;
+	
+			//init so everyone has all visible endings if they do not support js
+			changeEnding();
+			
+			function changeEnding()
+			{ 
+				console.log("works" + currentEnding);
+				if(currentEnding === numberOfEndings) currentEnding = 0;
+				else currentEnding += 1;
+				
+				endings.forEach(ending => {
+					ending.style.display = "none";
+				})
+				
+				endings[currentEnding].style.display = "block";
+			}
+			]]>
+		</script>
+		
+	</body>	
+</html>
